@@ -1,6 +1,9 @@
 # SCORER Cloud scheduled job create sample
 This sample Python script is AWS Lambda function to invole SCORER Cloud API to create scheduled jobs. It is assumed that schleduled invocations are made by CloudWatch Events.
 
+# Requrement
+Python 3.7
+
 
 # Usage
 
