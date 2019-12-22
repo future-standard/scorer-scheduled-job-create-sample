@@ -4,24 +4,20 @@ import requests
 import json
 
 
-realm = 'pub'
-# LT_
-device_id = 'LT_f07438d6-0e55-4f46-9fc5-e8a7de0e0dd6'
-# API Key
-api_key = ''
-algorithm_id = 'futurestandard:sensevideo-10fps'
+with open('config.json') as f:
+    conf = json.load(f)
 
-
-url = 'https://api-%s.scorer.jp/v1/devices/%s/vcajobs' % (realm, device_id)
+url = 'https://api-{}.scorer.jp/v1/devices/{}/vcajobs'.format(
+    conf.realm, conf.device_id)
 
 headers = {
-    'Authorization': api_key,
+    'Authorization': conf.api_key,
     'Accept': 'application/json',
     'Content-Type': 'application/json'
 }
 
 payload = {
-    'algorithmId': algorithm_id,
+    'algorithmId': conf.algorithm_id,
     'algorithmVersion': '1.0',
     'arguments': {
         'fromDateTime': None,
@@ -46,9 +42,8 @@ def lambda_handler(event, context):
 
     try:
         res = requests.post(url, data=json.dumps(payload), headers=headers)
+        return res
+
     except Exception as e:
         print(e)
-        print('Error getting object {} from bucket {}. Make sure they exist and your bucket is in the same region as this function.'.format(key, bucket))
         raise e
-
-    return res
