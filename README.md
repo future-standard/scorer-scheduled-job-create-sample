@@ -30,7 +30,7 @@ pip3 install requests -t .
 Create new Lambda function with Python 3.7 runtime.
 <img width="800" alt="" src="https://user-images.githubusercontent.com/4166534/71317674-4fda7f00-24c8-11ea-83e3-d1c15705ab80.png">
 
-Compress this directory as .zip and upload it.
+Compress this directory's contents as .zip and upload it.
 <img width="800" alt="" src="https://user-images.githubusercontent.com/4166534/71317691-90d29380-24c8-11ea-9b2d-a31558104717.png">
 
 
