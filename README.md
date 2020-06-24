@@ -12,7 +12,7 @@ Python 3.7
 {
     "realm": "pub",
     "device_id": "LT_....", # Device ID can be obtained from the SCORER Cloud URL
-    "api_key": "", # API can be obtained for SCORE Cloud setting menu
+    "api_key": "", # API can be obtained from SCORE Cloud settings menu
     "algorithm_id": ""
 }
 ```
