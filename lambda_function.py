@@ -41,7 +41,7 @@ def lambda_handler(event, context):
     payload['arguments']['toDateTime'] = end_str
 
     try:
-        res = requests.post(url, data=json.dumps(payload), headers=headers)
+        res = requests.post(url, data=payload, headers=headers)
         return res
 
     except Exception as e:
